@@ -1,0 +1,1 @@
+<div class="timeline">{% for e in events %}<article><span>{{ e.created_at|date:'d/m/Y H:i' }} · {{ e.actor.first_name|default:e.actor.username }}{% if e.order %} · <a href="{% url 'detail' e.order.pk %}">{{ e.order.code }}</a>{% endif %}</span><p>{{ e.text }}</p></article>{% empty %}<p class="muted">Nenhuma movimentação.</p>{% endfor %}</div>
